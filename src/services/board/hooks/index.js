@@ -1,7 +1,7 @@
 'use strict';
 
 const board = require('./board');
-
+const createBoard = require ('./createBoard')
 const globalHooks = require('../../../hooks');
 const hooks = require('feathers-hooks');
 const auth = require('feathers-authentication').hooks;
@@ -14,7 +14,7 @@ exports.before = {
   ],
   find: [],
   get: [],
-  create: [board()],
+  create: [createBoard()],
   update: [],
   patch: [],
   remove: []
