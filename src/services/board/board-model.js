@@ -1,20 +1,19 @@
 'use strict';
 
-// game-model.js - A mongoose model
-//
+// board-model.js - A mongoose model
+// 
 // See http://mongoosejs.com/docs/models.html
 // for more of what you can do here.
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const gameSchema = new Schema({
-  title: { type: String, required: true },
-  playerIds: [Schema.Types.ObjectId], 
+const boardSchema = new Schema({
+  text: { type: String, required: true },
   createdAt: { type: Date, 'default': Date.now },
   updatedAt: { type: Date, 'default': Date.now }
 });
 
-const gameModel = mongoose.model('game', gameSchema);
+const boardModel = mongoose.model('board', boardSchema);
 
-module.exports = gameModel;
+module.exports = boardModel;
