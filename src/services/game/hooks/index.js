@@ -1,7 +1,7 @@
 'use strict';
 
 const firstEncounter = require('./firstEncounter');
-const createBoard = require('../../board/hooks/createBoard')
+
 const isGameFull = require('./isGameFull');
 
 const joinGame = require('./joinGame');
@@ -20,7 +20,7 @@ exports.before = {
   ],
   find: [],
   get: [],
-  create: [createGame(), createBoard()],
+  create: [createGame()],
   update: [joinGame()],
   patch: [joinGame()],
   remove: []

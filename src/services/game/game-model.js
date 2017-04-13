@@ -19,12 +19,12 @@ const Schema = mongoose.Schema;
 const checkerSchema = new Schema({
   x: { type: Number, required: true },
   y: { type: Number, required: true },
-  value: { type: Number, required: true }, //0=no checker, 1=player 1 checker, 2=player 2 checker, 3=player 1 king, 4=player2 king
-})
+  value: { type: Number, required: true } //0=no checker, 1=player 1 checker, 2=player 2 checker, 3=player 1 king, 4=player2 king
+});
 
 const gameSchema = new Schema({
   title: { type: String, required: true },
-  checkers: [checkerSchema],
+  checkers: [ checkerSchema ],
   playerIds: [Schema.Types.ObjectId],
   createdAt: { type: Date, 'default': Date.now },
   updatedAt: { type: Date, 'default': Date.now }

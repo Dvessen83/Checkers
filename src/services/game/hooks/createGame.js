@@ -6,18 +6,18 @@
 // For more information on hooks see: http://docs.feathersjs.com/hooks/readme.html
 
 const TILE_VALUES = {
-  NO_CHECKER : 0,
-  PLAYER_ONE : 1,
-  PLAYER_TWO : 2,
-  PLAYER_ONE_KING : 3,
-  PLAYER_TWO_KING : 4
+  NO_CHECKER: 0,
+  PLAYER_ONE: 1,
+  PLAYER_TWO: 2,
+  PLAYER_ONE_KING: 3,
+  PLAYER_TWO_KING: 4
 }
 
 function newSetUp(){
   let newBoard = [];
 
-  for (let y = 0; y <= 8; y++) {
-    for (let x = 0; x<= 8; x++){
+  for (let y = 0; y <= 7; y++) {
+    for (let x = 0; x <= 7; x++){
       let tileValue;
       if(y < 3 && (x%2 + y%2 ) %2==0 ){
         tileValue = TILE_VALUES.PLAYER_ONE;
@@ -28,13 +28,14 @@ function newSetUp(){
       }
 
 
-      console.log(newBoard);
 
-      newBoard.push({ x, y, tileValue})
+
+      newBoard.push({ x,y, value: tileValue})
     }
   }
 
   return newBoard;
+
 }
 
 const defaults = {};
