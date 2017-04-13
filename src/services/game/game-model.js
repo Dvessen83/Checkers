@@ -8,9 +8,16 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const checkerSchema = new Schema({
+  x: { type: Number, required: true },
+  y: { type: Number, required: true },
+  playerIndex: { type: Number, required: true },
+})
+
 const gameSchema = new Schema({
   title: { type: String, required: true },
-  playerIds: [Schema.Types.ObjectId], 
+  checkers: [checkerSchema],
+  playerIds: [Schema.Types.ObjectId],
   createdAt: { type: Date, 'default': Date.now },
   updatedAt: { type: Date, 'default': Date.now }
 });

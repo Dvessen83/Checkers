@@ -14,7 +14,7 @@ exports.before = {
   ],
   find: [],
   get: [],
-  create: [createBoard()],
+  create: [],
   update: [],
   patch: [],
   remove: []
